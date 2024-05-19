@@ -1,0 +1,68 @@
+/* color palette from <https://github.com/vuejs/theme> */
+@import url("https://fonts.googleapis.com/css?family=Outfit");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+/* semantic color variables for this project */
+:root {
+  --background-color: #fff;
+  --background-side-color: #ddd;
+
+  --text-color: #000;
+  --text-font: "Outfit", sans-serif;
+  --text-size: 1.6em;
+  --text-header-font: "Montserrat", sans-serif;
+  --text-header-size: 1.8em;
+
+  --border-color: #D2D4D6;
+
+  --input-color: #eef;
+
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #0E1525;
+    --background-side-color: #0E1525;
+
+    --text-color: #fff;
+
+    --border-color: #2B3245;
+
+    --input-color: #112;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background-color: var(--background-color);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
