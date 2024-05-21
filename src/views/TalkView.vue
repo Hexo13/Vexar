@@ -32,6 +32,7 @@ export default {
 
 #title {
     font-family: var(--text-header-font);
+    margin-bottom: 5%;
 }
 
 #talk {

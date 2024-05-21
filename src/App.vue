@@ -5,7 +5,7 @@
 <template>
     <header>
         <ul>
-            <li><RouterLink to="/">Home</RouterLink></li>
+            <li><RouterLink to="/">Vexar</RouterLink></li>
             <li><RouterLink to="/talk">Talk Talk</RouterLink></li>
         </ul>
     </header>
@@ -52,13 +52,19 @@ li {
 }
 
 a {
+    background-color: rgb(0, 8, 35);
+    border-radius: 0.5vw;
     text-decoration: none;
     color: var(--text-color);
     font-family: var(--text-header-font);
+    padding: 5px;
+
 }
 
 a:hover {
-    color: var(--text-hover-color);
+    background-color: #0a0;
+    border-radius: 1.5vw;
+    color: var(--background-color);
 }
 
 #content {
