@@ -52,7 +52,7 @@ li {
 }
 
 a {
-    background-color: rgb(0, 8, 35);
+    background-color: var(--input-color);
     border-radius: 0.5vw;
     text-decoration: none;
     color: var(--text-color);
