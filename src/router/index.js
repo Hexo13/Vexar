@@ -17,6 +17,16 @@ const router = createRouter({
             // which is lazy-loaded when the route is visited.
             component: () => import("../views/TalkView.vue"),
         },
+        {
+            path: "/todos",
+            name: "todos",
+            component: () => import("../views/TodosView.vue"),
+        },
+        {
+            path: "/minecraft",
+            name: "minecraft",
+            component: () => import("../views/MinecraftView.vue"),
+        },
     ],
 });
 

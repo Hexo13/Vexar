@@ -44,6 +44,7 @@ export default {
 #display {
     white-space: pre-line;
     margin-right: 5%;
+    font-size: var(--text-header-size);
 }
 
 #input {
