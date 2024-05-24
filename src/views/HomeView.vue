@@ -1,27 +1,26 @@
-<script setup>
-</script>
+<script setup></script>
 
 <template>
-  <div id="main">
-    <h1>Good</h1>
-    <p>Hello</p>
-    <h1>Good</h1>
-    <h1>Good</h1>
-    <h1>Good</h1><h1>Good</h1>
-    <h1>Good</h1>
-    <h1>Good</h1>
-    <h1>Good</h1>
-    <h1>Good</h1>
-    <h1>Good</h1>
-    <h1>Good</h1>
-    <h1>Good</h1>
-    <h1>Good</h1>
-    <h1>Good</h1>
-    <h1>Good</h1>
-    <h1>Good</h1>
-    <h1>Good</h1>
+    <div id="main">
+        <h1>Good</h1>
+        <p>Hello</p>
+        <h1>Good</h1>
+        <h1>Good</h1>
+        <h1>Good</h1>
+        <h1>Good</h1>
+        <h1>Good</h1>
+        <h1>Good</h1>
+        <h1>Good</h1>
+        <h1>Good</h1>
+        <h1>Good</h1>
+        <h1>Good</h1>
+        <h1>Good</h1>
+        <h1>Good</h1>
+        <h1>Good</h1>
+        <h1>Good</h1>
+        <h1>Good</h1>
+        <h1>Good</h1>
 
-    <h1>Good</h1>
-    
-  </div>
+        <h1>Good</h1>
+    </div>
 </template>

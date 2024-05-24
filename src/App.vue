@@ -1,7 +1,14 @@
 <script setup>
 import { RouterView } from "vue-router";
-import NavBar from './components/NavBar.vue'
+import NavBar from "./components/NavBar.vue";
+</script>
 
+<script>
+export default {
+    components: {
+        NavBar,
+    },
+};
 </script>
 
 <template>
@@ -12,7 +19,6 @@ import NavBar from './components/NavBar.vue'
 </template>
 
 <style scoped>
-
 #content {
     position: relative;
     margin: 0px;
@@ -21,5 +27,4 @@ import NavBar from './components/NavBar.vue'
     left: 0;
     right: 0;
 }
-
 </style>
