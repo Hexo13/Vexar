@@ -41,7 +41,9 @@ export default {
         <ul id="todoList">
             <li v-for="todo in todos" :key="todo.id">
                 {{ todo.todo }}
-                <DefaultBtn @click="removeTodo(todo)" class="removebtn">X</DefaultBtn>
+                <DefaultBtn @click="removeTodo(todo)" class="removebtn"
+                    >X</DefaultBtn
+                >
             </li>
         </ul>
     </div>

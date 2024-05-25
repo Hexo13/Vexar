@@ -19,9 +19,9 @@ export default {
     },
     methods: {
         async generateResponse(prompt) {
-            if(prompt !== "") {
-                this.input = ""
-                this.answer = "Generating..."
+            if (prompt !== "") {
+                this.input = "";
+                this.answer = "Generating...";
                 const model = this.genAI.getGenerativeModel({
                     model: "gemini-1.5-flash",
                 });
@@ -32,7 +32,7 @@ export default {
                 const response = await result.response;
                 this.answer = response.text();
             } else {
-                this.answer = "Please ask a question"
+                this.answer = "Please ask a question";
             }
         },
     },
@@ -61,7 +61,7 @@ export default {
 
 #prompt {
     width: 100%;
-    font-size: var(--text-size)
+    font-size: var(--text-size);
 }
 
 #response {
