@@ -1,7 +1,6 @@
 <script setup>
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import DefaultInput from "../components/DefaultInput.vue";
-import DefaultBtn from "@/components/DefaultBtn.vue";
 </script>
 
 <script>
