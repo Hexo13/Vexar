@@ -7,6 +7,10 @@ import DefaultInput from "../components/DefaultInput.vue";
 let id = 0;
 
 export default {
+    mounted() {
+        const existingTodos = localStorage.getItem("todos")
+        this.todos = JSON.parse(existingTodos) || []
+    },
     data() {
         return {
             todo: "",
@@ -21,12 +25,14 @@ export default {
                     id: id++,
                 });
                 this.todo = "";
+                localStorage.setItem("todos", JSON.stringify(this.todos))
             }
         },
         removeTodo(todo) {
             this.todos = this.todos.filter((filterTodo) => {
                 return todo.id !== filterTodo.id;
             });
+            localStorage.setItem("todos", JSON.stringify(this.todos))
         },
     },
 };
@@ -77,8 +83,9 @@ li {
 .removebtn {
     border-radius: 100%;
     font-size: 1.4em;
-    width: 1.4em;
+    min-width: 1.4em;
     height: 1.4em;
+
 }
 
 .removebtn:hover {

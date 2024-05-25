@@ -13,7 +13,7 @@ export default {
 <template>
     <ul id="links">
         <li>
-            <RouterLink to="/"><button id="logo"></button></RouterLink>
+            <RouterLink to="/" id="logo"></RouterLink>
         </li>
         <li><RouterLink to="/talk">Talk Talk</RouterLink></li>
         <li><RouterLink to="/todos">Todos</RouterLink></li>
@@ -47,6 +47,23 @@ li {
     place-content: center;
 }
 
+#logo {
+    background-image: url("/vexar.svg");
+    background-color: transparent;
+    width: 7.5em;
+    height: 1.5em;
+    background-size: cover;
+    background-position: center;
+    transition: 0.4s ease-in;
+    border: none;
+    border-radius: 1vw;
+}
+
+#logo:hover {
+    background-color: var(--main-color);
+    transition: 0.4s ease-in;
+}
+
 a {
     background-color: var(--input-color);
     border-radius: 0.5vh;
@@ -63,15 +80,5 @@ a:hover {
     border-radius: 1.5vh;
     transition: 0.4s ease-in;
     color: var(--background-color);
-}
-
-#logo {
-    background-image: url("/vexar.svg");
-    background-color: transparent;
-    width: 15em;
-    height: 3em;
-    background-size: cover;
-    background-position: center;
-    border: none;
 }
 </style>

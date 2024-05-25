@@ -4,12 +4,18 @@ import NavBar from "./components/NavBar.vue";
 </script>
 
 <script>
-export default {};
+    export default {
+        data() {
+            return {
+                switch: false,
+            }
+        }
+    }
 </script>
 
 <template>
-    <NavBar />
-    <div id="content">
+    <NavBar switch="{ clickOff }"/>
+    <div id="content" @click="clickOff = !clickOff">
         <RouterView />
     </div>
 </template>

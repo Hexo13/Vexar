@@ -12,12 +12,20 @@ export default {
             console.log(this.isMobile);
         });
     },
+    props: {
+        switch: Boolean
+    },
     data() {
         return {
             nav: false,
             isMobile: window.innerWidth < 1024,
         };
     },
+    watch: {
+        switch() {
+            this.nav = false;
+        }
+    }
 };
 </script>
 
@@ -25,7 +33,7 @@ export default {
     <header>
         <MainLinks v-if="!isMobile" />
         <MobileOptions v-if="isMobile" @hamburger="nav = !nav" />
-        <MobileLinks v-if="isMobile && nav" />
+        <MobileLinks v-if="isMobile && nav" @redirect="nav =!nav" />
     </header>
 </template>
 
@@ -39,6 +47,7 @@ header {
     font-size: var(--text-header-size);
     position: fixed;
     width: 100%;
+    height: 7vh;
     top: 0;
     bottom: 93vh;
     left: 0;
@@ -46,13 +55,5 @@ header {
     z-index: 1;
     display: grid;
     place-content: center;
-}
-
-#hamburger {
-    width: 2em;
-    height: 2em;
-    background-image: url("../../public/Hamburger.svg");
-    background-color: transparent;
-    border: none;
 }
 </style>

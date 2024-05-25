@@ -5,7 +5,7 @@ import { RouterLink } from "vue-router";
 <template>
     <ul id="links">
         <li>
-            <RouterLink to="/"><button id="logo"></button></RouterLink>
+            <RouterLink to="/" id="logo"></RouterLink>
         </li>
         <li><button id="hamburger" @click="$emit('hamburger')"></button></li>
     </ul>
@@ -28,32 +28,21 @@ li {
     place-content: center;
 }
 
-a {
-    background-color: var(--input-color);
-    border-radius: 0.5vh;
-    text-decoration: none;
-    transition: 0.4s ease-in;
-    color: var(--text-color);
-    font-family: var(--text-header-font);
-    padding: 0.2rem;
-    max-height: 6vh;
-}
-
-a:hover {
-    background-color: var(--main-color);
-    border-radius: 1.5vh;
-    transition: 0.4s ease-in;
-    color: var(--background-color);
-}
-
 #logo {
     background-image: url("/vexar.svg");
     background-color: transparent;
-    width: 15em;
-    height: 3em;
+    width: 7.5em;
+    height: 1.5em;
     background-size: cover;
     background-position: center;
+    transition: 0.4s ease-in;
     border: none;
+    border-radius: 1vw;
+}
+
+#logo:hover {
+    background-color: var(--main-color);
+    transition: 0.4s ease-in;
 }
 
 #hamburger {
@@ -69,5 +58,6 @@ a:hover {
 #hamburger:hover {
     background-color: var(--main-color);
     transition: 0.4s ease-in;
+    cursor: pointer;
 }
 </style>

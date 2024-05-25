@@ -5,10 +5,12 @@
 /* semantic color variables for this project */
 
 :root {
-    --background-color: #fff;
+    --main-color: #00aa00;
+
+    --background-color: #ffffff;
     --background-side-color: #ddd;
 
-    --text-color: #000;
+    --text-color: #000000;
     --text-font: "Outfit", sans-serif;
     --text-size: 1.4em;
     --text-header-font: "Montserrat", sans-serif;
@@ -16,21 +18,19 @@
 
     --border-color: #d2d4d6;
 
-    --input-color: #eef;
+    --input-color: #eeeeff;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --main-color: #00aa00;
-
         --background-color: #0e1525;
         --background-side-color: #0e1525;
 
-        --text-color: #fff;
+        --text-color: #ffffff;
 
         --border-color: #2b3245;
 
-        --input-color: #112;
+        --input-color: #111122;
     }
 }
 

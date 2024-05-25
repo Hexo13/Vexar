@@ -2,12 +2,14 @@
 import { RouterLink } from "vue-router";
 </script>
 
+
+
 <template>
     <ul id="links">
-        <li><RouterLink to="/talk">Talk Talk</RouterLink></li>
-        <li><RouterLink to="/todos">Todos</RouterLink></li>
-        <li><RouterLink to="/minecraft">Minecraft</RouterLink></li>
-        <li><RouterLink to="/search">Gemini</RouterLink></li>
+        <li><RouterLink to="/talk" @click="$emit('redirect')">Talk Talk</RouterLink></li>
+        <li><RouterLink to="/todos" @click="$emit('redirect')">Todos</RouterLink></li>
+        <li><RouterLink to="/minecraft" @click="$emit('redirect')">Minecraft</RouterLink></li>
+        <li><RouterLink to="/search" @click="$emit('redirect')">Gemini</RouterLink></li>
     </ul>
 </template>
 
@@ -20,8 +22,9 @@ import { RouterLink } from "vue-router";
     position: fixed;
     top: 7vh;
     right: 0px;
-    width: 30vw;
+    width: 40vw;
     height: 97%;
+    padding: 0px;
 }
 
 li {
