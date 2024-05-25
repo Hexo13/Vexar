@@ -27,6 +27,11 @@ const router = createRouter({
             name: "minecraft",
             component: () => import("../views/MinecraftView.vue"),
         },
+        {
+            path: "/search",
+            name: "search",
+            component: () => import("../views/AIView.vue")
+        }
     ],
 });
 

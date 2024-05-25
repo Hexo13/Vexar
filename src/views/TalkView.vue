@@ -28,6 +28,7 @@ export default {
     font-size: var(--text-header-size);
     color: var(--text-color);
     margin: 5%;
+    margin-top: 2%;
 }
 
 #title {

@@ -3,13 +3,14 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 /* semantic color variables for this project */
+
 :root {
     --background-color: #fff;
     --background-side-color: #ddd;
 
     --text-color: #000;
     --text-font: "Outfit", sans-serif;
-    --text-size: 1.6em;
+    --text-size: 1.4em;
     --text-header-font: "Montserrat", sans-serif;
     --text-header-size: 1.8em;
 
@@ -20,6 +21,8 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
+        --main-color: #00aa00;
+
         --background-color: #0e1525;
         --background-side-color: #0e1525;
 
@@ -41,27 +44,6 @@
 
 body {
     min-height: 100vh;
-    color: var(--color-text);
+    color: var(--text-color);
     background-color: var(--background-color);
-    transition:
-        color 0.5s,
-        background-color 0.5s;
-    line-height: 1.6;
-    font-family:
-        Inter,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Oxygen,
-        Ubuntu,
-        Cantarell,
-        "Fira Sans",
-        "Droid Sans",
-        "Helvetica Neue",
-        sans-serif;
-    font-size: 15px;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
