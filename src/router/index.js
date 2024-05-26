@@ -28,14 +28,26 @@ const router = createRouter({
             component: () => import("../views/MinecraftView.vue"),
         },
         {
-            path: "/search",
-            name: "search",
-            component: () => import("../views/AIView.vue"),
-        },
-        {
-            path: "/calculator",
-            name: "calculator",
-            component: () => import("../views/CalculatorView.vue"),
+            path: "/tools",
+            name: "tools",
+            component: () => import("../views/ToolsView.vue"),
+            children: [
+                {
+                    path: "",
+                    name: "toolslinks",
+                    component: () => import("../views/ToolsLinksView.vue"),
+                },
+                {
+                    path: "gemini",
+                    name: "gemini",
+                    component: () => import("../views/GeminiView.vue"),
+                },
+                {
+                    path: "calculator",
+                    name: "calculator",
+                    component: () => import("../views/CalculatorView.vue")
+                },
+            ],
         },
     ],
 });

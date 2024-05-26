@@ -1,7 +1,9 @@
 <script setup>
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { RouterLink } from "vue-router";
 import DefaultInput from "../components/DefaultInput.vue";
-import DefaultSection from "@/components/DefaultSection.vue";
+import DefaultSection from "../components/DefaultSection.vue";
+import DefaultBtn from "../components/DefaultBtn.vue";
 </script>
 
 <script>
@@ -42,6 +44,8 @@ export default {
 
 <template>
     <div id="main">
+        <DefaultSection header="Chat with Gemini"></DefaultSection>
+        <RouterLink to="../tools"><DefaultBtn id="back"></DefaultBtn></RouterLink>
         <form @submit.prevent="generateResponse(input)" id="form">
             <DefaultInput v-model="input" id="prompt" />
         </form>
@@ -52,10 +56,24 @@ export default {
 <style scoped>
 #main {
     font-family: var(--text-font);
-    font-size: var(--text-header-size);
+    font-size: var(--text-size);
     color: var(--text-color);
     margin-inline: 5%;
     margin-top: 2%;
+}
+
+#back {
+    position: fixed;
+    top: 10%;
+    left: 1%;
+    width: 1.5em;
+    height: 1.5em;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("/back.svg");
+    background-color: transparent;
+    border: none;
 }
 
 #prompt {

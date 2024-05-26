@@ -18,8 +18,7 @@ export default {
         <li><RouterLink to="/talk">Talk Talk</RouterLink></li>
         <li><RouterLink to="/todos">Todos</RouterLink></li>
         <li><RouterLink to="/minecraft">Minecraft</RouterLink></li>
-        <li><RouterLink to="/search">Gemini</RouterLink></li>
-        <li><RouterLink to="/calculator">Calculator</RouterLink></li>
+        <li><RouterLink to="/tools">Tools</RouterLink></li>
     </ul>
 </template>
 

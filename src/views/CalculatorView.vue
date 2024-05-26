@@ -1,5 +1,6 @@
 <script setup>
 import DefaultBtn from "../components/DefaultBtn.vue";
+import { RouterLink } from "vue-router";
 </script>
 
 <script>
@@ -111,32 +112,56 @@ export default {
 
 <template>
     <div id="main">
-        <div id="calculator">
-            <div id="view">
-                <span id="previous">{{ previous }}{{ oper }}</span>
-                <span id="current">{{ current }}</span>
+        <RouterLink to="../tools"><DefaultBtn id="back"></DefaultBtn></RouterLink>
+        <div id="center" @keydown.delete="btnClick('Del')" @keydown.enter="btnClick('=')">
+            <div id="calculator">
+                <div id="view">
+                    <span id="previous">{{ previous }}{{ oper }}</span>
+                    <span id="current">{{ current }}</span>
+                </div>
+                <DefaultBtn
+                    v-for="num in buttons"
+                    :key="num.value"
+                    :class="{ wide: num.wide }"
+                    class="calcBtn"
+                    @click="btnClick(num.value)"
+                    >{{ num.value }}</DefaultBtn>
             </div>
-            <DefaultBtn
-                v-for="num in buttons"
-                :key="num.value"
-                :class="{ wide: num.wide }"
-                @click="btnClick(num.value)"
-                >{{ num.value }}</DefaultBtn
-            >
         </div>
     </div>
 </template>
 
 <style scoped>
 #main {
+    height: 93vh;
+    font-size: var(--text-size);
+    font-family: var(--text-font);
+}
+
+#back {
+    position: fixed;
+    top: 10%;
+    left: 1%;
+    width: 1.5em;
+    height: 1.5em;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("/back.svg");
+    background-color: transparent;
+    border: none;
+}
+
+#center {
     display: grid;
     place-content: center;
-    height: 93vh;
+    height: 100%;
+    width: 100%;
 }
 
 #calculator {
     width: 35vw;
-    min-width: 358.4px;
+    min-width: 350px;
     padding: 5px;
     height: 75vh;
     background-color: var(--input-color);
@@ -147,7 +172,6 @@ export default {
     display: grid;
     grid-template-rows: 20% repeat(5, 16%);
     grid-template-columns: repeat(4, 25%);
-    font-family: var(--text-font);
 }
 
 #view {
@@ -158,7 +182,7 @@ export default {
     background-color: var(--text-color);
     margin: 5px;
     border-radius: 2vw;
-    padding: 5%;
+    padding: 3%;
     color: var(--input-color);
     text-align: right;
     font-family: var(--text-header-font);
@@ -172,7 +196,7 @@ export default {
     font-size: var(--text-header-size);
 }
 
-button {
+.calcBtn {
     margin: 5px;
     background-color: var(--text-color);
     color: var(--input-color);
@@ -180,7 +204,7 @@ button {
     border: none;
 }
 
-button:hover {
+.caclBtn:hover {
     transform: none;
     color: var(--main-color);
     background-color: var(--text-color);

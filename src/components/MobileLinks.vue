@@ -20,11 +20,10 @@ import { RouterLink } from "vue-router";
             >
         </li>
         <li>
-            <RouterLink to="/search" @click="$emit('redirect')"
-                >Gemini</RouterLink
+            <RouterLink to="/tools" @click="$emit('redirect')"
+                >Tools</RouterLink
             >
         </li>
-        <li><RouterLink to="/calculator">Calculator</RouterLink></li>
     </ul>
 </template>
 

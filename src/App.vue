@@ -22,11 +22,12 @@ export default {
 
 <style scoped>
 #content {
-    position: relative;
+    position: absolute;
     margin: 0px;
     top: 7vh;
     bottom: 0;
     left: 0;
     right: 0;
+    height: 93vh;
 }
 </style>
