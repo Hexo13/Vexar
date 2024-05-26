@@ -2,14 +2,29 @@
 import { RouterLink } from "vue-router";
 </script>
 
-
-
 <template>
     <ul id="links">
-        <li><RouterLink to="/talk" @click="$emit('redirect')">Talk Talk</RouterLink></li>
-        <li><RouterLink to="/todos" @click="$emit('redirect')">Todos</RouterLink></li>
-        <li><RouterLink to="/minecraft" @click="$emit('redirect')">Minecraft</RouterLink></li>
-        <li><RouterLink to="/search" @click="$emit('redirect')">Gemini</RouterLink></li>
+        <li>
+            <RouterLink to="/talk" @click="$emit('redirect')"
+                >Talk Talk</RouterLink
+            >
+        </li>
+        <li>
+            <RouterLink to="/todos" @click="$emit('redirect')"
+                >Todos</RouterLink
+            >
+        </li>
+        <li>
+            <RouterLink to="/minecraft" @click="$emit('redirect')"
+                >Minecraft</RouterLink
+            >
+        </li>
+        <li>
+            <RouterLink to="/search" @click="$emit('redirect')"
+                >Gemini</RouterLink
+            >
+        </li>
+        <li><RouterLink to="/calculator">Calculator</RouterLink></li>
     </ul>
 </template>
 

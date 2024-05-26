@@ -1,6 +1,7 @@
 <script setup>
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import DefaultInput from "../components/DefaultInput.vue";
+import DefaultSection from "@/components/DefaultSection.vue";
 </script>
 
 <script>
@@ -44,9 +45,7 @@ export default {
         <form @submit.prevent="generateResponse(input)" id="form">
             <DefaultInput v-model="input" id="prompt" />
         </form>
-        <p id="response">
-            {{ answer }}
-        </p>
+        <DefaultSection>{{ answer }}</DefaultSection>
     </div>
 </template>
 

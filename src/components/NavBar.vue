@@ -13,7 +13,7 @@ export default {
         });
     },
     props: {
-        switch: Boolean
+        switch: Boolean,
     },
     data() {
         return {
@@ -24,8 +24,8 @@ export default {
     watch: {
         switch() {
             this.nav = false;
-        }
-    }
+        },
+    },
 };
 </script>
 
@@ -33,7 +33,7 @@ export default {
     <header>
         <MainLinks v-if="!isMobile" />
         <MobileOptions v-if="isMobile" @hamburger="nav = !nav" />
-        <MobileLinks v-if="isMobile && nav" @redirect="nav =!nav" />
+        <MobileLinks v-if="isMobile && nav" @redirect="nav = !nav" />
     </header>
 </template>
 
