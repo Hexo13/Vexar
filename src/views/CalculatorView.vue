@@ -112,8 +112,14 @@ export default {
 
 <template>
     <div id="main">
-        <RouterLink to="../tools"><DefaultBtn id="back"></DefaultBtn></RouterLink>
-        <div id="center" @keydown.delete="btnClick('Del')" @keydown.enter="btnClick('=')">
+        <RouterLink to="../tools"
+            ><DefaultBtn id="back"></DefaultBtn
+        ></RouterLink>
+        <div
+            id="center"
+            @keydown.delete="btnClick('Del')"
+            @keydown.enter="btnClick('=')"
+        >
             <div id="calculator">
                 <div id="view">
                     <span id="previous">{{ previous }}{{ oper }}</span>
@@ -125,7 +131,8 @@ export default {
                     :class="{ wide: num.wide }"
                     class="calcBtn"
                     @click="btnClick(num.value)"
-                    >{{ num.value }}</DefaultBtn>
+                    >{{ num.value }}</DefaultBtn
+                >
             </div>
         </div>
     </div>

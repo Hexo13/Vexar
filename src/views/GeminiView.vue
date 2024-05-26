@@ -45,7 +45,9 @@ export default {
 <template>
     <div id="main">
         <DefaultSection header="Chat with Gemini"></DefaultSection>
-        <RouterLink to="../tools"><DefaultBtn id="back"></DefaultBtn></RouterLink>
+        <RouterLink to="../tools"
+            ><DefaultBtn id="back"></DefaultBtn
+        ></RouterLink>
         <form @submit.prevent="generateResponse(input)" id="form">
             <DefaultInput v-model="input" id="prompt" />
         </form>
