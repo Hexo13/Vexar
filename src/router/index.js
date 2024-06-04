@@ -23,9 +23,21 @@ const router = createRouter({
             component: () => import("../views/TodosView.vue"),
         },
         {
-            path: "/minecraft",
-            name: "minecraft",
-            component: () => import("../views/MinecraftView.vue"),
+            path: "/games",
+            name: "games",
+            component: () => import("../views/GamesView.vue"),
+            children: [
+                {
+                    path: "",
+                    name: "gameslinks",
+                    component: () => import("../views/GamesLinksView.vue"),
+                },
+                {
+                    path: "ticktacktoe",
+                    name: "ticktacktoe",
+                    component: () => import("../views/TickTackToeView.vue"),
+                },
+            ],
         },
         {
             path: "/tools",

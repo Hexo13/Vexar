@@ -40,11 +40,6 @@ li {
     border-radius: 1vw;
 }
 
-#logo:hover {
-    background-color: var(--main-color);
-    transition: 0.4s ease-in;
-}
-
 #hamburger {
     width: 3em;
     height: 3em;
@@ -53,11 +48,5 @@ li {
     border-radius: 1vw;
     border: none;
     transition: 0.4s ease-in;
-}
-
-#hamburger:hover {
-    background-color: var(--main-color);
-    transition: 0.4s ease-in;
-    cursor: pointer;
 }
 </style>

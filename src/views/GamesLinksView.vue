@@ -6,14 +6,9 @@ import DefaultBtn from "../components/DefaultBtn.vue";
 <template>
     <div id="main">
         <div id="links">
-            <RouterLink to="/tools/gemini"
+            <RouterLink to="/games/ticktacktoe"
                 ><DefaultBtn class="toolBtn"
-                    ><h1>Gemini</h1></DefaultBtn
-                ></RouterLink
-            >
-            <RouterLink to="/tools/calculator"
-                ><DefaultBtn class="toolBtn"
-                    ><h1>Calculator</h1></DefaultBtn
+                    ><h1>Tick Tack Toe</h1></DefaultBtn
                 ></RouterLink
             >
         </div>

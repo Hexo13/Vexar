@@ -13,6 +13,8 @@ export default {
 
         // Access your API key (see "Set up your API key" above)
         this.genAI = new GoogleGenerativeAI(API_KEY);
+
+        this.safetySettings = [];
     },
     data() {
         return {
@@ -26,11 +28,12 @@ export default {
                 this.input = "";
                 this.answer = "Generating...";
                 const model = this.genAI.getGenerativeModel({
-                    model: "gemini-1.5-flash",
+                    model: "gemini-pro",
                 });
 
                 const result = await model.generateContent(
                     prompt + "(The answer must be shorter than 25 words)",
+                    this.safetySettings,
                 );
                 const response = await result.response;
                 this.answer = response.text();

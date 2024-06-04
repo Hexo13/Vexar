@@ -15,8 +15,8 @@ import { RouterLink } from "vue-router";
             >
         </li>
         <li>
-            <RouterLink to="/minecraft" @click="$emit('redirect')"
-                >Minecraft</RouterLink
+            <RouterLink to="/games" @click="$emit('redirect')"
+                >Games</RouterLink
             >
         </li>
         <li>
@@ -56,12 +56,5 @@ a {
     color: var(--text-color);
     font-family: var(--text-header-font);
     padding: 0.2rem;
-}
-
-a:hover {
-    background-color: var(--main-color);
-    border-radius: 1.5vh;
-    transition: 0.4s ease-in;
-    color: var(--background-color);
 }
 </style>

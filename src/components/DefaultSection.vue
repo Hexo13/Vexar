@@ -13,7 +13,7 @@ export default {
     </section>
 </template>
 
-<style>
+<style scoped>
 section {
     display: flex;
     flex-direction: column;

@@ -1,11 +1,3 @@
-<script>
-export default {
-    props: {
-        text: String,
-    },
-};
-</script>
-
 <template>
     <button><slot></slot></button>
 </template>
@@ -21,6 +13,7 @@ button {
     font-size: var(--text-size);
     color: var(--text-color);
     transition: 0.2s ease-in;
+    padding: 0px;
 }
 
 button:hover {
