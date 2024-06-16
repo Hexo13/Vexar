@@ -8,15 +8,18 @@ export default {
     props: {
         nav: Boolean,
     },
-    methods: {
-        hamburger() {
-            if (this.nav) {
-                this.hamClose();
-            } else {
-                this.hamOpen();
-            }
-            this.$emit("hamburger");
+    watch: {
+        nav: {
+            handler(nav) {
+                if (nav) {
+                    this.hamOpen();
+                } else {
+                    this.hamClose();
+                }
+            },
         },
+    },
+    methods: {
         hamOpen() {
             gsap.to("#line2", { x: -500, opacity: 0, duration: 0.25 });
             gsap.to("#line1", {
@@ -54,7 +57,7 @@ export default {
             <RouterLink to="/" id="logo"></RouterLink>
         </li>
         <li>
-            <button id="hamburger" @click="hamburger()">
+            <button id="hamburger" @click="this.$emit('hamburger')">
                 <svg
                     version="1.1"
                     viewBox="0.0 0.0 1000.0 1000.0"
