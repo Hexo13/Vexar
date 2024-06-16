@@ -9,7 +9,7 @@ import DefaultBtn from "../components/DefaultBtn.vue";
 <script>
 export default {
     mounted() {
-        const API_KEY = "AIzaSyCvm9yuZzoBqIJqW7ZbuJ-3MsgOrGSCIRA";
+        const API_KEY = "***************************************";
 
         // Access your API key (see "Set up your API key" above)
         this.genAI = new GoogleGenerativeAI(API_KEY);
