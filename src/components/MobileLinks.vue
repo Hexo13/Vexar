@@ -2,8 +2,26 @@
 import { RouterLink } from "vue-router";
 </script>
 
+<script>
+export default {
+    props: ["nav"],
+    data() {
+        return {
+            transform: true,
+        }
+    },
+    watch: {
+        nav: {
+            handler() {
+                this.transform = this.nav ? false : true
+            }
+        }
+    }
+}
+</script>
+
 <template>
-    <ul id="links">
+    <ul id="links" :class="{transformed: transform}">
         <li>
             <RouterLink to="/talk" @click="$emit('redirect')"
                 >Talk Talk</RouterLink
@@ -39,7 +57,7 @@ import { RouterLink } from "vue-router";
     width: 40vw;
     height: 97%;
     padding: 0px;
-    transition: 0.4s, ease-in;
+    transition: 0.5s;
 }
 
 li {
@@ -53,16 +71,12 @@ a {
     background-color: var(--input-color);
     border-radius: 0.5vh;
     text-decoration: none;
-    transition: 0.4s ease-in;
     color: var(--text-color);
     font-family: var(--text-header-font);
     padding: 0.2rem;
 }
 
-a:hover {
-    background-color: var(--main-color);
-    border-radius: 1.5vh;
-    transition: 0.4s ease-in;
-    color: var(--background-color);
+.transformed {
+    transform: translateX(40vw);
 }
 </style>

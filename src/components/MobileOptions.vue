@@ -1,11 +1,32 @@
 <script setup>
 import { RouterLink } from "vue-router";
+import gsap from "gsap";
 </script>
 
 <script>
 export default {
     props: {
         nav: Boolean
+    },
+    methods: {
+        hamburger() {
+            if(this.nav) {
+                this.hamClose()
+            } else {
+                this.hamOpen()
+            }
+            this.$emit("hamburger")
+        },
+        hamOpen() {
+            gsap.to("#line2", {x: -500, opacity: 0, duration: 0.25})
+            gsap.to('#line1', {transformOrigin: "50% 50%", rotation: 45, y: 250, duration: 0.25, delay: 0.25})
+            gsap.to('#line3', {transformOrigin: "50% 50%", rotation: -45, y: -250, duration: 0.25, delay: 0.25})
+        },
+        hamClose() {
+            gsap.to('#line1', {rotation: 0, y: 0, duration: 0.25})
+            gsap.to('#line3', {rotation: 0, y: 0, duration: 0.25})
+            gsap.to("#line2", {x: 0, opacity: 100, duration: 0.25, delay: 0.25})
+        }
     }
 }
 </script>
@@ -16,8 +37,15 @@ export default {
             <RouterLink to="/" id="logo"></RouterLink>
         </li>
         <li>
-            <button id="hamburger" @click="$emit('hamburger')" v-show="!nav"></button>
-            <button id="cross" @click="$emit('hamburger')" v-show="nav"></button>
+            <button id="hamburger" @click="hamburger()">
+                <svg version="1.1" viewBox="0.0 0.0 1000.0 1000.0" xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                        <path fill="#00aa00" d="m94.88189 180.00394l810.2362 0l0 128.78741l-810.2362 0z" id="line1"/>
+                        <path fill="#00aa00" d="m94.88189 435.60587l810.2362 0l0 128.78738l-810.2362 0z" id="line2"/>
+                        <path fill="#00aa00" d="m94.88189 691.2078l810.2362 0l0 128.78735l-810.2362 0z" id="line3"/>
+                    </g>
+                </svg>
+            </button>
         </li>
     </ul>
 </template>
@@ -51,20 +79,19 @@ li {
     border-radius: 1vw;
 }
 
-#hamburger, #cross {
+#hamburger {
     width: 3em;
     height: 3em;
     background-color: transparent;
     border-radius: 1vw;
     border: none;
     transition: 0.4s ease-in;
+    display: grid;
+    justify-content: center;
 }
 
-#hamburger {
-    background-image: url("/hamburger.svg");
-}
-
-#cross {
-    background-image: url("/cross.svg");
+svg {
+    width: 3em;
+    height: 3em;
 }
 </style>

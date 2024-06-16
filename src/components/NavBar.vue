@@ -9,7 +9,7 @@ export default {
     created() {
         window.addEventListener("resize", () => {
             this.isMobile = window.innerWidth < 1024;
-            console.log(this.isMobile);
+            this.nav = window.innerWidth >= 1024 ? true : false;
         });
     },
     props: {
@@ -17,13 +17,18 @@ export default {
     },
     data() {
         return {
-            nav: false,
             isMobile: window.innerWidth < 1024,
+            nav: window.innerWdith >= 1024 ? true : false,
         };
     },
     watch: {
         switch() {
             this.nav = false;
+        },
+    },
+    methods: {
+        hamburger() {
+            this.nav = !this.nav;
         },
     },
 };
@@ -32,8 +37,8 @@ export default {
 <template>
     <header>
         <MainLinks v-if="!isMobile" />
-        <MobileOptions v-if="isMobile" @hamburger="nav = !nav" nav="nav"/>
-        <MobileLinks v-if="isMobile && nav" @redirect="nav = !nav"/>
+        <MobileOptions v-if="isMobile" @hamburger="nav = !nav" :nav="nav" />
+        <MobileLinks v-if="isMobile" @redirect="nav = !nav" :nav="nav" />
     </header>
 </template>
 
