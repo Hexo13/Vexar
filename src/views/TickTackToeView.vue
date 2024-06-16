@@ -34,23 +34,97 @@ export default {
                 false,
                 " ",
             ],
-            filtered: [
-                "","","","","","","","",""
-            ]
+            indexes: [],
+            filtered: [],
+            solves: [
+                [1, 1, 1, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 1, 1, 1, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 1, 1, 1],
+                [1, 0, 0, 1, 0, 0, 1, 0, 0],
+                [0, 1, 0, 0, 1, 0, 0, 1, 0],
+                [0, 0, 1, 0, 0, 1, 0, 0, 1],
+                [1, 0, 0, 0, 1, 0, 0, 0, 1],
+                [0, 0, 1, 0, 1, 0, 1, 0, 0],
+            ],
+            cor: 0,
         };
     },
     methods: {
         slotClick(i) {
-            if(this.slots[i] === " ") {
-                this.slots[i] = "O"
-                this.filtered = this.slots.filter((slot) => {
-                    return typeof slot === "string"
-                })
-                console.log(this.filtered[Math.floor(Math.random() * 9)])
-                //this.slots[Math.floor(Math.random() * 9)] = "X"
+            if (this.slots[i] === " ") {
+                this.slots[i] = "O";
+                this.indexes = [];
+                this.slots.forEach((val, i) => {
+                    if (val === " ") {
+                        this.indexes.push(i);
+                    }
+                });
+                console.log(this.indexes);
+                this.slots[
+                    this.indexes[
+                        Math.floor(Math.random() * (this.indexes.length - 1))
+                    ]
+                ] = "X";
             }
         },
-    }
+        solve() {
+            this.slots = [
+                " ",
+                false,
+                " ",
+                false,
+                " ",
+                false,
+                false,
+                false,
+                false,
+                false,
+                " ",
+                false,
+                " ",
+                false,
+                " ",
+                false,
+                false,
+                false,
+                false,
+                false,
+                " ",
+                false,
+                " ",
+                false,
+                " ",
+            ];
+            console.log("solve");
+        },
+    },
+    watch: {
+        slots: {
+            handler() {
+                console.log("change");
+                this.filtered = this.slots.filter((filter) => {
+                    return typeof filter === "string";
+                });
+                console.log("bacon");
+                for (let i = 0; i < 8; i++) {
+                    this.cor = 0;
+                    for (let val in this.filtered) {
+                        if (
+                            (this.filtered === this.solves[i[val]] ?? "X") ||
+                            (this.filtered[val] === this.solves[i[val]] ?? "O")
+                        ) {
+                            this.cor++;
+                        }
+                    }
+                    if (this.cor === 8) {
+                        this.solve();
+                    }
+                }
+                console.log("what?");
+            },
+            deep: true,
+        },
+    },
 };
 </script>
 
@@ -63,7 +137,7 @@ export default {
             <div id="board">
                 <div
                     v-for="(slot, i) in slots"
-                    :key="slot"
+                    :key="i"
                     :class="{ filled: !slot, slot: slot }"
                 >
                     <div v-if="slot" @click="slotClick(i)">
@@ -121,7 +195,7 @@ export default {
     background-color: #fff;
 }
 
-.slot > div{
+.slot > div {
     display: grid;
     place-content: center;
     width: 100%;

@@ -39,6 +39,7 @@ import { RouterLink } from "vue-router";
     width: 40vw;
     height: 97%;
     padding: 0px;
+    transition: 0.4s, ease-in;
 }
 
 li {
@@ -56,5 +57,12 @@ a {
     color: var(--text-color);
     font-family: var(--text-header-font);
     padding: 0.2rem;
+}
+
+a:hover {
+    background-color: var(--main-color);
+    border-radius: 1.5vh;
+    transition: 0.4s ease-in;
+    color: var(--background-color);
 }
 </style>

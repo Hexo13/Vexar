@@ -32,8 +32,8 @@ export default {
 <template>
     <header>
         <MainLinks v-if="!isMobile" />
-        <MobileOptions v-if="isMobile" @hamburger="nav = !nav" />
-        <MobileLinks v-if="isMobile && nav" @redirect="nav = !nav" />
+        <MobileOptions v-if="isMobile" @hamburger="nav = !nav" nav="nav"/>
+        <MobileLinks v-if="isMobile && nav" @redirect="nav = !nav"/>
     </header>
 </template>
 

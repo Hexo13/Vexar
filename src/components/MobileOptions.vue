@@ -2,12 +2,23 @@
 import { RouterLink } from "vue-router";
 </script>
 
+<script>
+export default {
+    props: {
+        nav: Boolean
+    }
+}
+</script>
+
 <template>
     <ul id="links">
         <li>
             <RouterLink to="/" id="logo"></RouterLink>
         </li>
-        <li><button id="hamburger" @click="$emit('hamburger')"></button></li>
+        <li>
+            <button id="hamburger" @click="$emit('hamburger')" v-show="!nav"></button>
+            <button id="cross" @click="$emit('hamburger')" v-show="nav"></button>
+        </li>
     </ul>
 </template>
 
@@ -40,13 +51,20 @@ li {
     border-radius: 1vw;
 }
 
-#hamburger {
+#hamburger, #cross {
     width: 3em;
     height: 3em;
-    background-image: url("/hamburger.svg");
     background-color: transparent;
     border-radius: 1vw;
     border: none;
     transition: 0.4s ease-in;
+}
+
+#hamburger {
+    background-image: url("/hamburger.svg");
+}
+
+#cross {
+    background-image: url("/cross.svg");
 }
 </style>
