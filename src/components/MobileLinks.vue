@@ -8,20 +8,20 @@ export default {
     data() {
         return {
             transform: true,
-        }
+        };
     },
     watch: {
         nav: {
             handler() {
-                this.transform = this.nav ? false : true
-            }
-        }
-    }
-}
+                this.transform = this.nav ? false : true;
+            },
+        },
+    },
+};
 </script>
 
 <template>
-    <ul id="links" :class="{transformed: transform}">
+    <ul id="links" :class="{ transformed: transform }">
         <li>
             <RouterLink to="/talk" @click="$emit('redirect')"
                 >Talk Talk</RouterLink

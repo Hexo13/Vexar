@@ -6,29 +6,46 @@ import gsap from "gsap";
 <script>
 export default {
     props: {
-        nav: Boolean
+        nav: Boolean,
     },
     methods: {
         hamburger() {
-            if(this.nav) {
-                this.hamClose()
+            if (this.nav) {
+                this.hamClose();
             } else {
-                this.hamOpen()
+                this.hamOpen();
             }
-            this.$emit("hamburger")
+            this.$emit("hamburger");
         },
         hamOpen() {
-            gsap.to("#line2", {x: -500, opacity: 0, duration: 0.25})
-            gsap.to('#line1', {transformOrigin: "50% 50%", rotation: 45, y: 250, duration: 0.25, delay: 0.25})
-            gsap.to('#line3', {transformOrigin: "50% 50%", rotation: -45, y: -250, duration: 0.25, delay: 0.25})
+            gsap.to("#line2", { x: -500, opacity: 0, duration: 0.25 });
+            gsap.to("#line1", {
+                transformOrigin: "50% 50%",
+                rotation: 45,
+                y: 250,
+                duration: 0.25,
+                delay: 0.25,
+            });
+            gsap.to("#line3", {
+                transformOrigin: "50% 50%",
+                rotation: -45,
+                y: -250,
+                duration: 0.25,
+                delay: 0.25,
+            });
         },
         hamClose() {
-            gsap.to('#line1', {rotation: 0, y: 0, duration: 0.25})
-            gsap.to('#line3', {rotation: 0, y: 0, duration: 0.25})
-            gsap.to("#line2", {x: 0, opacity: 100, duration: 0.25, delay: 0.25})
-        }
-    }
-}
+            gsap.to("#line1", { rotation: 0, y: 0, duration: 0.25 });
+            gsap.to("#line3", { rotation: 0, y: 0, duration: 0.25 });
+            gsap.to("#line2", {
+                x: 0,
+                opacity: 100,
+                duration: 0.25,
+                delay: 0.25,
+            });
+        },
+    },
+};
 </script>
 
 <template>
@@ -38,11 +55,27 @@ export default {
         </li>
         <li>
             <button id="hamburger" @click="hamburger()">
-                <svg version="1.1" viewBox="0.0 0.0 1000.0 1000.0" xmlns="http://www.w3.org/2000/svg">
+                <svg
+                    version="1.1"
+                    viewBox="0.0 0.0 1000.0 1000.0"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
                     <g>
-                        <path fill="#00aa00" d="m94.88189 180.00394l810.2362 0l0 128.78741l-810.2362 0z" id="line1"/>
-                        <path fill="#00aa00" d="m94.88189 435.60587l810.2362 0l0 128.78738l-810.2362 0z" id="line2"/>
-                        <path fill="#00aa00" d="m94.88189 691.2078l810.2362 0l0 128.78735l-810.2362 0z" id="line3"/>
+                        <path
+                            fill="#00aa00"
+                            d="m94.88189 180.00394l810.2362 0l0 128.78741l-810.2362 0z"
+                            id="line1"
+                        />
+                        <path
+                            fill="#00aa00"
+                            d="m94.88189 435.60587l810.2362 0l0 128.78738l-810.2362 0z"
+                            id="line2"
+                        />
+                        <path
+                            fill="#00aa00"
+                            d="m94.88189 691.2078l810.2362 0l0 128.78735l-810.2362 0z"
+                            id="line3"
+                        />
                     </g>
                 </svg>
             </button>
